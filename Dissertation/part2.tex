@@ -2,62 +2,20 @@
 
 \section{Одиночное изображение}\label{sec:ch2/sec1}
 
-\begin{figure}[ht]
-  \centerfloat{
-    \includegraphics[scale=0.27]{latex}
-  }
-  \caption{TeX.}\label{fig:latex}
-\end{figure}
-
 Для выравнивания изображения по-центру используется команда \verb+\centerfloat+, которая является во
 многом улучшенной версией встроенной команды \verb+\centering+.
 
 \section{Длинное название параграфа, в котором мы узнаём как сделать две картинки с~общим номером и названием}\label{sec:ch2/sect2}
 
 А это две картинки под общим номером и названием:
-\begin{figure}[ht]
-  \begin{minipage}[b][][b]{0.49\linewidth}\centering
-    \includegraphics[width=0.5\linewidth]{knuth1} \\ а)
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b][][b]{0.49\linewidth}\centering
-    \includegraphics[width=0.5\linewidth]{knuth2} \\ б)
-  \end{minipage}
-  \caption{Очень длинная подпись к изображению,
-      на котором представлены две фотографии Дональда Кнута}
-  \label{fig:knuth}
-\end{figure}
 
 Те~же~две картинки под~общим номером и~названием,
 но с автоматизированной нумерацией подрисунков:
-\begin{figure}[ht]
-    \centerfloat{
-        \hfill
-        \subbottom[List-of-Figures entry][Первый подрисунок\label{fig:knuth_2-1}]{%
-            \includegraphics[width=0.25\linewidth]{knuth1}}
-        \hfill
-        \subbottom[\label{fig:knuth_2-2}]{%
-            \includegraphics[width=0.25\linewidth]{knuth2}}
-        \hfill
-        \subbottom[Третий подрисунок]{%
-            \includegraphics[width=0.3\linewidth]{example-image-c}}
-        \hfill
-    }
-    \legend{Подрисуночный текст, описывающий обозначения, например. Согласно
-    ГОСТ 2.105, пункт 4.3.1, располагается перед наименованием рисунка.}
-    \caption[Этот текст попадает в названия рисунков в списке рисунков]{Очень
-    длинная подпись к второму изображению, на~котором представлены две
-    фотографии Дональда Кнута}\label{fig:knuth_2}
-\end{figure}
-
-На рисунке~\ref{fig:knuth_2-1} показан Дональд Кнут без головного убора.
-На рисунке~\ref{fig:knuth_2}\subcaptionref*{fig:knuth_2-2}
 показан Дональд Кнут в головном уборе.
 
 Возможно вставлять векторные картинки, рассчитываемые \LaTeX\ <<на~лету>>
 с~их~предварительной компиляцией. Надписи в таких рисунках будут выполнены
 тем же~шрифтом, который указан для документа в целом.
-На~рисунке~\ref{fig:tikz_example} на~странице~\pageref{fig:tikz_example}
 представлен пример схемы, рассчитываемой пакетом \verb|tikz| <<на~лету>>.
 Для ускорения компиляции, подобные рисунки могут быть <<кешированы>>, что
 определяется настройками в~\verb|common/setup.tex|.
@@ -65,16 +23,6 @@
 файла и~папка расположения таких файлов могут быть отдельно заданы,
 что удобно, если не~для подготовки диссертации,
 то~для подготовки научных публикаций.
-\begin{figure}[ht]
-    \centerfloat{
-        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_example_compiled}}{}% присваиваемое предкомпилированному pdf имя файла (не обязательно)
-        \input{Dissertation/images/tikz_scheme.tikz}
-
-    }
-    \legend{}
-    \caption[Пример \texttt{tikz} схемы]{Пример рисунка, рассчитываемого
-        \texttt{tikz}, который может быть предкомпилирован}\label{fig:tikz_example}
-\end{figure}
 
 Множество программ имеют либо встроенную возможность экспортировать векторную
 графику кодом \verb|tikz|, либо соответствующий пакет расширения.
