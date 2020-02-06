@@ -7,7 +7,7 @@
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
     }{
-        \includegraphics[height=1.5cm]{personal-signature.png}
+        \includegraphics[height=1.2cm]{images/sign.png}
     }\\
 \end{tabularx}
 
@@ -61,24 +61,26 @@
                               \fi
                               \vspace{0.013\paperheight}\\
     \else
-    Научный руководитель:   & \supervisorRegalia\par
-                              \ifdefined\supervisorDead
+    Научный руководитель:   & \ifdefined\supervisorDead
                               \framebox{\textbf{\supervisorFio}}
                               \else
-                              \textbf{\supervisorFio}
+                              \textbf{\supervisorFio}\par
                               \fi
+                              \supervisorRegalia,\par
+                              \supervisorJobPlace,\par
+                              \supervisorJobPost\par
                               \vspace{0.013\paperheight}\\
     \fi
     Официальные оппоненты:  &
     \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{%
         \textbf{\opponentOneFio,}\par
         \opponentOneRegalia,\par
-        \opponentOneJobPlace,\par
+        \opponentOneJobPlace,
         \opponentOneJobPost\par
         \vspace{0.01\paperheight}
         \textbf{\opponentTwoFio,}\par
         \opponentTwoRegalia,\par
-        \opponentTwoJobPlace,\par
+        \opponentTwoJobPlace,
         \opponentTwoJobPost
     \ifdefined\opponentThreeFio
         \par
@@ -99,13 +101,13 @@
 \end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
-\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
+\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~в \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent С диссертацией можно ознакомиться в библиотеке \synopsisLibrary.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, учёному секретарю диссертационного совета~\defenseCouncilNumber.
+\noindent Отзывы, заверенные печатью, просьба направлять по адресу: \defenseCouncilAddress, Ученый совет МАИ.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent{Автореферат разослан \synopsisDate.}
@@ -120,12 +122,11 @@
 r
 @{}}
     Ученый секретарь\par
-    диссертационного совета\par
-    \defenseCouncilNumber,\par
+    диссертационного совета \defenseCouncilNumber,\par
     \defenseSecretaryRegalia
     &
     \ifnumequal{\value{showsecrsign}}{0}{}{%
-        \includegraphics[width=2cm]{secretary-signature.png}%
+        \includegraphics[width=1.5cm]{secretary-signature.png}%
     }%
     &
     \defenseSecretaryFio
